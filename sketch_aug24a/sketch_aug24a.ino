@@ -4,7 +4,7 @@ int f =11;
 int g =10;
 int h=9;
 void setup() {
-  // put your setup code here, to run once:
+
   pinMode(L,OUTPUT);
   pinMode(E,OUTPUT);
   pinMode(f,OUTPUT);
@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  
   digitalWrite(L,HIGH);
   delay(100);
   digitalWrite(L,LOW);
