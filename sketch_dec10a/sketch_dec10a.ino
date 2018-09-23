@@ -1,7 +1,7 @@
 void setup() {
   pinMode(4,INPUT);
-  pinMode(11,OUTPUT);//RED
-  pinMode(12,OUTPUT);//GREEN
+  pinMode(11,OUTPUT);
+  pinMode(12,OUTPUT);
   
 
 }
