@@ -6,15 +6,12 @@ byte pin;
 int analogValue;
 int previousAnalogValues[TOTAL_ANALOG_PINS];
 
-byte portStatus[TOTAL_PORTS]; // each bit: 1=pin is digital input, 0=other/ignore
+byte portStatus[TOTAL_PORTS]; 
 byte previousPINs[TOTAL_PORTS];
 
-/* timer variables */
-unsigned long currentMillis;     // store the current value from millis()
-unsigned long previousMillis;    // for comparison with currentMillis
-/* make sure that the FTDI buffer doesn't go over 60 bytes, otherwise you
-   get long, random delays.  So only read analogs every 20ms or so */
-int samplingInterval = 19;      // how often to run the main loop (in ms)
+unsigned long currentMillis;    
+unsigned long previousMillis;   
+int samplingInterval = 19;
 
 void sendPort(byte portNumber, byte portValue)
 {
@@ -53,8 +50,7 @@ void loop()
   for (i = 0; i < TOTAL_PORTS; i++) {
     sendPort(i, readPort(i, 0xff));
   }
-  /* make sure that the FTDI buffer doesn't go over 60 bytes, otherwise you
-     get long, random delays.  So only read analogs every 20ms or so */
+ 
   currentMillis = millis();
   if (currentMillis - previousMillis > samplingInterval) {
     previousMillis += samplingInterval;
