@@ -16,7 +16,7 @@ digitalWrite(trig,LOW);
 long t =pulseIn(echo,HIGH);
 long inches =t/74/2;
 long cm =t/29/2;
-Serial.print(inches);// 6in 15cm
+Serial.print(inches);
 Serial.print(" in \t");
 Serial.print(cm);
 Serial.println("cm");
